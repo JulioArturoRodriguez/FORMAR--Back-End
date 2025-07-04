@@ -1,7 +1,7 @@
 import sqlite3 from 'sqlite3';
 import { open } from 'sqlite';
 
-export const openDb = async () => {
+export const connectDB = async () => {
   const db = await open({
     filename: './base-de-dados.db',
     driver: sqlite3.Database,
@@ -24,5 +24,5 @@ export const openDb = async () => {
     )
   `);
 
-  return db; 
+  return db;
 };

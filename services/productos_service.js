@@ -1,9 +1,7 @@
-export const getall = () => produtosModel.findall();
-export const getById = (id) => produtosModel.findById(id);
+import * as productosModel from '../model/productos_model.js';
 
-export const create = (producto) => produtosModel.create(producto);
-
-export const update = (id, producto) => produtosModel.update(id, producto);
-
-export const remove = (id) => produtosModel.remove(id);
-
+export const getAll = () => productosModel.findall();
+export const getById = (id) => productosModel.findById(id);
+export const create = (producto) => productosModel.create(producto);
+export const update = (id, producto) => productosModel.update(id, producto);
+export const remove = (id) => productosModel.remove(id);

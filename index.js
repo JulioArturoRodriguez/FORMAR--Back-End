@@ -1,24 +1,27 @@
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
-import { connectDB } from './db/sqlite.js';
-import { setDB } from './models/productos.model.js';
-import productosRoutes from './routes/productos.routes.js';
-import { notFound } from './middlewares/notFound.middleware.js';
+import { connectDB } from './db.js';
+import { setDB } from './model/productos_model.js';
+import productosRoutes from './routes/productos.js';
 import { logger } from './config/config.js';
-
-dotenv.config();
+import PORT from './config/port.js';
 
 const app = express();
-const PORT = process.env.PORT;
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true
+}));
+
 app.use(express.json());
-
 app.use('/productos', productosRoutes);
-app.use(notFound);
 
-async function startServer() {
+app.use((req, res) => {
+  res.status(404).json({ error: 'Ruta no encontrada' });
+});
+
+const startServer = async () => {
   try {
     const db = await connectDB();
     setDB(db);
@@ -27,10 +30,11 @@ async function startServer() {
       logger.info(`Servidor iniciado en http://localhost:${PORT}`);
     });
   } catch (err) {
-    logger.error('Error al iniciar servidor:', err.message);
+    logger.error('Error al iniciar el servidor:', {
+      message: err.message,
+      stack: err.stack
+    });
   }
-}
+};
 
 startServer();
-export default app; // Export the app for testing or further configuration
-export { PORT }; // Export PORT for testing or further configuration
