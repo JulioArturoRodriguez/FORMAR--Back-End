@@ -97,3 +97,39 @@ Asegúrate de tener instalado:
 - **SQLite3** (cliente de línea de comandos o SQLite Browser)
 
 ---
+
+
+/project-root
+├── /dist                          # Archivos compilados o distribución (build)
+│
+├── /config
+│   ├── config.js                  # Archivo de configuración general
+│   └── port.js                   # Configuración del puerto
+│
+├── /controller
+│   └── productos_controller.js   # Controlador para productos
+│
+├── /logs                         # Carpeta para logs
+│   ├── combined.log              # Logs combinados
+│   └── error.log                 # Logs de error
+│
+├── /model
+│   └── productos_model.js        # Modelo de productos
+│
+├── /node_modules                 # Dependencias instaladas por npm
+│
+├── /routes
+│   └── productos.js              # Rutas para productos
+│
+├── /services
+│   └── productos_service.js      # Lógica de negocio para productos
+│
+├── /validators
+│   └── productos_validacion.js  # Validaciones para productos
+│
+├── .gitignore                   # Archivos/carpetas ignoradas por Git
+├── base-de-dados.db             # Base de datos SQLite
+├── db.js                       # Archivo de conexión o configuración DB
+├── index.js                    # Entrada principal de la aplicación
+├── package-lock.json           # Lockfile de dependencias npm
+├── package.json                # Archivo con dependencias y scripts npm
