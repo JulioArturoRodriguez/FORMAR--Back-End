@@ -19,7 +19,7 @@ export const connectDB = async () => {
       fecha_de_salida TEXT DEFAULT (datetime('now')),
       vendedor TEXT NOT NULL,
       categoria TEXT NOT NULL CHECK (
-        categoria IN ('frutas', 'verduras', 'lácteos', 'carnes', 'panadería', 'bebidas', 'otros')
+        categoria IN ('frutas', 'verduras', 'lacteos', 'carnes', 'panaderia', 'bebidas', 'otros')
       )
     )
   `);
