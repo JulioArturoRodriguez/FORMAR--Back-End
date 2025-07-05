@@ -7,3 +7,5 @@
 {"level":"error","message":"Error al iniciar el servidor:","timestamp":"2025-07-04T18:43:50.372Z"}
 {"level":"error","message":"Error al iniciar el servidor:","timestamp":"2025-07-04T19:01:15.233Z"}
 {"level":"info","message":"Servidor iniciado en http://localhost:3000","timestamp":"2025-07-04T19:11:11.283Z"}
+{"level":"info","message":"Servidor iniciado en http://localhost:3000","timestamp":"2025-07-05T00:24:41.568Z"}
+{"level":"info","message":"Servidor iniciado en http://localhost:3000","timestamp":"2025-07-05T01:41:41.941Z"}
